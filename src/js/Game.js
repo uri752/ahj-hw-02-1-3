@@ -18,7 +18,8 @@ export default class Game {
 
     ];
 
-    this.matrix.forEach((item, index, arr) => {
+    for (let index = 0; index < this.matrix.length; index += 1) {
+      // this.matrix.forEach((item, index, arr) => {
       const tile = document.createElement('span');
       tile.className = 'tile';
       this.board.appendChild(tile);
@@ -26,8 +27,8 @@ export default class Game {
         tile.appendChild(this.goblin);
       }
       // item = tile;
-      arr[index] = tile;
-    });
+      this.matrix[index] = tile;
+    }
 
     this.curTileIndex = newIndex;
   }
